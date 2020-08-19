@@ -1,0 +1,2 @@
+# electrinc
+Random incremental game.

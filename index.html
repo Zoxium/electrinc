@@ -11,37 +11,48 @@
                 <p style="text-align: center;">You have <span id="elAmount">0.00</span> electrons.</p>
                 <p style="text-align: center;">Currently gaining <span id="elPerSec">??/sec</span> electrons per second.</p>
                 <br>
-                <div id="elTitle">Electrons</div>
             </div>
         </div>
-
-        <div id="horizLine"></div>
         
         <br>
-        
-        <div class="primaryGens">
-            <div class="pgen1">
-                <div id="gen1">Generator 1 <span id="gen1AmBht">[0.0, 0]</span> <span class="genMults" id="gen1Mult">x1.00</span> <span class="genPercentProd">+0.00%/s</span></div>
-                <button onclick="buyPrimGen(1)" class="buyableBtns">1st Generator<br>Cost: <span id="gen1Cost">10</span></button>
-            </div>
-            <br>
-            <div class="pgen2">
-                <div id="gen2">Generator 2 <span id="gen2AmBht">[0.0, 0]</span> <span class="genMults" id="gen2Mult">x1.00</span> <span class="genPercentProd">+0.00%/s</span></div>
-                <button onclick="buyPrimGen(2)" class="buyableBtns">2nt Generator<br>Cost: <span id="gen2Cost">50</span></button>
-            </div>
-            <br>
-            <div class="pgen3">
-                <div id="gen3">Generator 2 <span id="gen3AmBht">[0.0, 0]</span> <span class="genMults" id="gen3Mult">x1.00</span> <span class="genPercentProd">+0.00%/s</span></div>
-                <button onclick="buyPrimGen(3)" class="buyableBtns">2nt Generator<br>Cost: <span id="gen3Cost">50</span></button>
+        <div id="genTab" class="tabs" style="display: block;">
+            <div class="normalGens">
+                <div class="pgen1">
+                    <div id="gen1">Generator 1 <span id="gen1AmBht">[0.0, 0]</span> <span class="genMults" id="gen1Mult">x1.00</span> <span class="gen1Prod">^0.00/s</span></div>
+                    <button id="buyGen1" onclick="buyPrimGen(1)" class="buyableBtns">1st Generator<br>Cost: <span id="gen1Cost">10</span></button>
+                </div>
+                <br>
+                <div class="pgen2">
+                    <div id="gen2">Generator 2 <span id="gen2AmBht">[0.0, 0]</span> <span class="genMults" id="gen2Mult">x1.00</span> <span class="gen2Prod">+0.00%/s</span></div>
+                    <button id="buyGen2" onclick="buyPrimGen(2)" class="buyableBtns">2nd Generator<br>Cost: <span id="gen2Cost">50</span></button>
+                </div>
+                <br>
+                <div class="pgen3">
+                    <div id="gen3">Generator 3 <span id="gen3AmBht">[0.0, 0]</span> <span class="genMults" id="gen3Mult">x1.00</span> <span class="gen3Prod">+0.00%/s</span></div>
+                    <button id="buyGen3" onclick="buyPrimGen(3)" class="buyableBtns">3rd Generator<br>Cost: <span id="gen3Cost">50</span></button>
+                </div>
+                <br>
+                <div class="pgen4">
+                    <div id="gen4">Generator 4 <span id="gen4AmBht">[0.0, 0]</span> <span class="genMults" id="gen4Mult">x1.00</span> <span class="gen4Prod">+0.00%/s</span></div>
+                    <button id="buyGen4" onclick="buyPrimGen(4)" class="buyableBtns">4th Generator<br>Cost: <span id="gen4Cost">50</span></button>
+                </div>
             </div>
         </div>
-
+    
         <div class="offsiteLinks">
             <a href="offsite-links/info/info.html">Helpful Info</a>
+            <a href="offsite-links/credits/credits.html">Credits</a>
+        </div>
+        <br>
+        <div class="gameInfo">
+            <p>Version: 0.0.1 <small>"I finally created something."</small></p>
+            <p>FPS: 60 (can be changed in the future)</p>
         </div>
 
         <script src="js/libraries/break_eternity.js"></script>
         <script src="js/libraries/format.js"></script>
+
         <script src="js/core/main.js"></script>
+        <script src="js/core/maincomponents/variables.js"></script>
     </body>
 </html>

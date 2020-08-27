@@ -1,6 +1,5 @@
-# electrinc
-Random incremental game.
-
+# Electrinc V0.0.1
+Simple little incremental inspired off of Antimatter Dimensions.
 <h1>Stuff to do</h1>
 <h2>Adding / Fixing</h2>
 <p>1. Buttons being red when unbuyable and greenw when buyable. [DONE]<br>2. Making percentages work. [UNDONE]<br>3. Implement % bar to represent progress. [UNDONE]<br>4. Hiding generators until you reach half of the generator's initial price. [UNDONE]</p>

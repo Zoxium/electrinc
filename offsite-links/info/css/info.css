@@ -1,23 +1,21 @@
-@font-face {
-    src: url("cmunrm.ttf");
-    font-family: cmo;
-}
-
 h1 {
     margin: auto;
     font-family: inconsolata;
+    letter-spacing: 1px;
 }
 
 h2 {
     margin: auto;
     font-family: inconsolata;
     font-size: 20px;
+    letter-spacing: 1px;
 }
 
 h3 {
     margin: auto;
     font-family: inconsolata;
     font-size: 16px;
+    letter-spacing: 1px;
 }
 
 p {
@@ -25,9 +23,9 @@ p {
     font-family: inconsolata;
     font-weight: lighter;
     font-size: 15px;
+    letter-spacing: 1px;
 }
 
 .formulas {
     font-weight: bold;
-    font-family: cmo;
 }

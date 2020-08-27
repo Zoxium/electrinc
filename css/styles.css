@@ -34,7 +34,7 @@ p {
     background-color: rgb(255, 255, 255);
 }
 
-.primaryGens {
+.normalGens {
     color: white;
     font-family: MSTR;
 }
@@ -50,28 +50,42 @@ p {
 }
 
 .unbuyableBtns {
-    background-color: rgb(179, 0, 0);
+    background-color: rgb(125, 0, 0);
     color: white;
     font-family: MSTR;
-    border-width: 3px;
-    border-radius: 3px;
+    border-width: 2px;
+    border-radius: 2px;
     border-style: solid;
-    border-color: rgb(170, 170, 170);
+    border-color: rgb(255, 255, 255);
+}
+
+.unbuyableBtns:hover {
+    background-color: rgb(175, 0, 0);
 }
 
 .buyableBtns {
-    background-color: rgb(0, 104, 0);
+    background-color: rgb(0, 125, 0);
     color: white;
     font-family: MSTR;
-    border-width: 3px;
-    border-radius: 3px;
+    border-width: 2px;
+    border-radius: 2px;
     border-style: solid;
-    border-color: rgb(170, 170, 170);
+    border-color: rgb(255, 255, 255);
+}
+
+.buyableBtns:hover {
+    background-color: rgb(0, 175, 0);
 }
 
 .offsiteLinks {
     position: fixed;
-    bottom: 10px;
+    bottom: 5px;
+    right: 5px;
 
     font-family: MSTR;
+}
+
+.gameInfo {
+    position: fixed;
+    bottom: 5px;
 }

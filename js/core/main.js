@@ -1,53 +1,33 @@
-var player = {
-    currencies: {
-        electrons: new Decimal(10),
-    },
-
-    generators: {
-        1: {
-            cost: new Decimal(10),
-            amount: new Decimal(0),
-            bought: 0,
-            power: 1,
-        },
-
-        2: {
-            cost: new Decimal(100),
-            amount: new Decimal(0),
-            bought: 0,
-            power: 1,
-        },
-
-        3: {
-            cost: new Decimal(10000),
-            amount: new Decimal(0),
-            bought: 0,
-            power: 1,
-        },
-    },
-
-    options: {
-        notation: "Standard",
-    },
-}
+// This code will have some comments to indicate things that might be confusing to new programmers.
 
 var chosenFPS = 60
 var msPerFrame = 1000 / chosenFPS
 
 function updateAll() {
     gen = player.generators
-    document.getElementById("elAmount").innerHTML = player.currencies.electrons.toStringWithDecimalPlaces(2)
-    document.getElementById("elPerSec").innerHTML = Decimal.mul(gen[1].amount, gen[1].power).toFixed(2) + "/sec"
+    
     player.currencies.electrons = Decimal.add(player.currencies.electrons, Decimal.div(Decimal.mul(gen[1].amount, gen[1].power), chosenFPS))
-    for (i = 0; i < 3; i++){
+    player.currencies.elPerSec = Decimal.mul(gen[1].amount, gen[1].power)
+    document.getElementById("elAmount").innerHTML = formatValue("Standard", player.currencies.electrons, 2, 2)
+    document.getElementById("elPerSec").innerHTML = formatValue("Standard", player.currencies.elPerSec, 2, 2)
+
+    // This part was very confusing for me.
+
+    for (i = 0; i < 4; i++){
         document.getElementById("gen" + (i+1) + "Mult").innerHTML = "x" + gen[i+1].power.toFixed(2)
         document.getElementById("gen" + (i+1) + "AmBht").innerText = "[" + gen[i+1].amount.toFixed(2) + ", " + gen[i+1].bought + "]"
-        document.getElementById("gen" + (i+1) + "Cost").innerHTML = formatValue(player.options.notation, gen[i+1].cost, 2, 1)
+        document.getElementById("gen" + (i+1) + "Cost").innerHTML = formatValue(player.options.notation, gen[i+1].cost, 2, 2)
+
+        if (Decimal.gte(player.currencies.electrons, player.generators[i+1].cost)) { // For your info, "Decimal.gte" means greater than or equal to. If you use break_eternity/infinity.js and just use the regular lesser or greater than sign, this wouldn't work. //
+            document.getElementById("buyGen" + (i+1)).className = "buyableBtns"
+        } else {
+            document.getElementById("buyGen" + (i+1)).className = "unbuyableBtns"
+        }
     }
 }
 
 function productionLoop() {
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 3; i++) {
         player.generators[i+1].amount = Decimal.add(player.generators[i+1].amount, Decimal.div(Decimal.mul(player.generators[i+2].amount, player.generators[i+2].power), chosenFPS * 10))
     }
 }
@@ -69,3 +49,4 @@ function allLoop() {
 }
 
 setInterval(allLoop, msPerFrame)
+
